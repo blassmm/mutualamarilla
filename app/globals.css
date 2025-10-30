@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Oculta Next.js DevTools (solo en dev) */
+#__next_devtools,
+button[aria-label="Open Next.js DevTools"],
+.next-devtools,
+.next-debugger {
+  display: none !important;
+}
