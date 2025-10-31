@@ -5,9 +5,9 @@ import Image from "next/image"
 export function Hero() {
     return (
         <section className="relative">
-        <div className="relative h-screen w-full z-0"> {/* <-- h-screen */}
+        <div className="relative h-screen w-full z-0">
           <Image
-            src="/images/heroImg.jpg"      /* ruta correcta: /images/heroImg.jpg */
+            src="/images/heroImg.jpg"
             alt="Manos unidas en equipo"
             fill
             className="object-cover"
@@ -18,12 +18,14 @@ export function Hero() {
 
         {/* Logo Circle Overlay */}
         <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20">
-          <div className="relative h-[280px] w-[280px] rounded-full bg-[#F4ED4E] flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-[80px] font-thin leading-none tracking-wider">AMAT</div>
-              <div className="mt-2 text-sm font-bold tracking-wide">MUTUAL AMARILLA</div>
-              <div className="text-sm font-bold tracking-wide">DE TRABAJADORES</div>
-            </div>
+          <div className="relative h-[280px] w-[280px]">
+            <Image
+              src="/images/logoHero.png"
+              alt="AMAT - Mutual Amarilla de Trabajadores"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </div>
       </section>

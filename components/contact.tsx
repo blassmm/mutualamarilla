@@ -66,7 +66,7 @@ export default function ContactoPage() {
             </div>
 
             <div className="relative h-[500px]">
-              <Image src="/smiling-woman-in-yellow-sweater-with-arms-crossed.jpg" alt="Contacto" fill className="object-contain" />
+              <Image src="/images/contactImg.png" alt="Contacto" fill className="object-contain" />
             </div>
           </div>
         </div>

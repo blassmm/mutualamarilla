@@ -45,7 +45,7 @@ export default function AboutUs() {
               <div className="relative h-[400px] w-full">
                 <div className="absolute right-0 top-0 h-[350px] w-[350px] rounded-full bg-[#F4ED4E]" />
                 <div className="absolute left-0 top-12 h-[350px] w-[350px] overflow-hidden rounded-full">
-                  <Image src="/business-people-working-together-at-office.jpg" alt="Equipo trabajando" fill className="object-cover" />
+                  <Image src="/images/aboutUsImg.png" alt="Equipo trabajando" fill className="object-cover" />
                 </div>
               </div>
             </div>

@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function AyudaEconomica() {
   return (
       <section className="relative h-[600px]">
-        <Image src="/smiling-man-in-plaid-shirt-at-workplace.jpg" alt="Ayuda Económica" fill className="object-cover" priority />
+        <Image src="/images/formImg.jpg" alt="Ayuda Económica" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="absolute inset-0 flex items-center justify-end px-6">

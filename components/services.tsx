@@ -13,7 +13,7 @@ export default function Services() {
           <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
             <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
               <Image
-                src="/female-dentist-smiling.png"
+                src="/images/serviceOdonto.png"
                 alt="Servicio de Odontología"
                 width={200}
                 height={200}
@@ -34,7 +34,7 @@ export default function Services() {
           <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
             <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
               <Image
-                src="/medical-professional-providing-home-care.jpg"
+                src="/images/serviceIntDom.png"
                 alt="Servicio de Internación Domiciliaria"
                 width={200}
                 height={200}
@@ -56,7 +56,7 @@ export default function Services() {
           <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
             <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
               <Image
-                src="/baby-hand-holding-adult-finger.jpg"
+                src="/images/serviceSubNac.png"
                 alt="Servicio de Subsidio de Nacimiento"
                 width={200}
                 height={200}
@@ -82,7 +82,7 @@ export default function Services() {
           <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
             <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
               <Image
-                src="/person-being-comforted-with-hand-on-shoulder.jpg"
+                src="/images/serviceSubFall.png"
                 alt="Servicio de Subsidio de Fallecimiento"
                 width={200}
                 height={200}
@@ -105,7 +105,7 @@ export default function Services() {
           <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
             <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
               <Image
-                src="/lawyer-consulting-with-client.jpg"
+                src="/images/serviceAseLeg.png"
                 alt="Servicio de Asesoramiento Legal"
                 width={200}
                 height={200}
@@ -127,7 +127,7 @@ export default function Services() {
           <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
             <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
               <Image
-                src="/hands-holding-piggy-bank-with-coins.jpg"
+                src="/images/serviceAyuEco.png"
                 alt="Servicio de Ayudas Económicas"
                 width={200}
                 height={200}
