@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function AboutUs() {
     return (
-        <section className="bg-white px-6 pb-20 pt-40">
+        <section className="bg-white px-6  ">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-12 text-4xl font-bold text-gray-800">QUIENES SOMOS</h2>
 
