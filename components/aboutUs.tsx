@@ -9,7 +9,7 @@ export default function AboutUs() {
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-12 text-4xl font-bold text-gray-800">QUIENES SOMOS</h2>
 
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
             <div className="space-y-6 text-justify text-gray-700 leading-relaxed">
               <p>
                 En el año 2000, un grupo de personas visionarias y comprometidas decidió unirse para crear una
@@ -41,12 +41,9 @@ export default function AboutUs() {
               </Link>
             </div>
 
-            <div className="relative">
-              <div className="relative h-[400px] w-full">
-                <div className="absolute right-0 top-0 h-[350px] w-[350px] rounded-full bg-[#F4ED4E]" />
-                <div className="absolute left-0 top-12 h-[350px] w-[350px] overflow-hidden rounded-full">
-                  <Image src="/images/aboutUsImg.png" alt="Equipo trabajando" fill className="object-cover" />
-                </div>
+            <div className="relative flex justify-end">
+              <div className="relative h-[550px] w-[550px]">
+                <Image src="/images/aboutUsImg.png" alt="Equipo trabajando" fill className="object-contain" />
               </div>
             </div>
           </div>

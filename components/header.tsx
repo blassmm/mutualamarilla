@@ -13,7 +13,8 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="mx-8 flex h-20 items-center justify-between ">
+        <div>
         <Link href="/" className="flex items-center">
           <div className="relative h-16 w-16">
             <Image
@@ -25,7 +26,8 @@ export function Header() {
             />
           </div>
         </Link>
-
+        </div>
+        <div>
         <nav className="flex items-center gap-8">
           <Link
             href="/"
@@ -68,6 +70,7 @@ export function Header() {
             Contacto
           </Link>
         </nav>
+        </div>
       </div>
     </header>
   )
