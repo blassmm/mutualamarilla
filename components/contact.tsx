@@ -4,69 +4,70 @@ export default function ContactoPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-[200px] bg-gradient-to-b from-gray-100 to-white">
+      <section className="relative h-[200px] bg-white">
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl font-bold text-gray-800">CONTACTO</h1>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="bg-white px-6 py-20">
+      <section className="bg-white px-6 ">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
-            <div className="bg-[#F4ED4E] rounded-lg p-12">
-              <div className="mb-8">
-                <p className="mb-6 text-gray-700 leading-relaxed">
+          <div className="bg-[#F4ED4E] rounded-t-3xl p-12 relative overflow-hidden">
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div>
+                <p className="mb-8 text-gray-800 leading-relaxed">
                   Nuestro equipo estará encantado de responder a tus consultas, brindarte información adicional y
                   asistirte en todo lo que necesites.
                 </p>
 
-                <div className="mb-6">
-                  <h3 className="mb-2 text-sm font-bold uppercase text-gray-800">HORARIO DE ATENCIÓN:</h3>
-                  <p className="text-sm text-gray-700">Lunes a Viernes: 08:00 - 16:00</p>
-                  <p className="text-sm text-gray-700">Sábados: 09:00 - 13:00</p>
+                <div className="mb-8">
+                  <h3 className="mb-3 text-sm font-bold uppercase text-gray-800">HORARIO DE ATENCIÓN:</h3>
+                  <p className="text-sm text-gray-800">Lunes a viernes: 08:00 – 16:00</p>
+                  <p className="text-sm text-gray-800">Sábados: 09:00 – 13:00</p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center">
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                      </svg>
+                    </div>
+                    <p className="text-gray-800">221 4205203</p>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center">
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      </svg>
+                    </div>
+                    <p className="text-gray-800">consultas@mutualamarilla.com</p>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center">
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-gray-800">Calle 45 N°859, La Plata,</p>
+                      <p className="text-sm text-gray-800">Buenos Aires, Argentina.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center">
-                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-800">221 4205203</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center">
-                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-800">consultas@mutualamarilla.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center">
-                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-800">Calle 45 N°859, La Plata,</p>
-                    <p className="text-sm text-gray-700">Buenos Aires, Argentina.</p>
-                  </div>
-                </div>
+              <div className="relative h-[400px] flex justify-end">
+                <Image 
+                  src="/images/contactImg.png" 
+                  alt="Contacto" 
+                  fill 
+                  className="object-contain object-right" 
+                />
               </div>
-            </div>
-
-            <div className="relative h-[500px]">
-              <Image src="/images/contactImg.png" alt="Contacto" fill className="object-contain" />
             </div>
           </div>
         </div>
