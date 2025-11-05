@@ -3,16 +3,16 @@ import Image from "next/image"
 export default function ContactoPage() {
   return (
     <main>
-      <section className="relative h-[140px] bg-white">
+      <section className="relative h-[160px] bg-white">
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-3xl mt-16 font-bold text-gray-800">CONTACTO</h1>
         </div>
       </section>
 
-      <section className="bg-white px-6 ">
-        <div className="mx-auto max-w-7xl">
-          <div className="bg-[#EDF000] rounded-t-3xl p-12 relative overflow-hidden">
-            <div className="grid gap-12 lg:grid-cols-2 items-center">
+      <section className="bg-white px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="bg-[#EDF000] h-[400px] rounded-t-3xl p-12 relative overflow-hidden flex items-center">
+            <div className="grid gap-12 lg:grid-cols-3 items-center w-full">
               <div>
                 <p className="mb-8 text-gray-800 leading-relaxed">
                   Nuestro equipo estará encantado de responder a tus consultas, brindarte información adicional y
@@ -24,7 +24,8 @@ export default function ContactoPage() {
                   <p className="text-sm text-gray-800">Lunes a viernes: 08:00 – 16:00</p>
                   <p className="text-sm text-gray-800">Sábados: 09:00 – 13:00</p>
                 </div>
-
+              </div>
+              <div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 items-center justify-center">
@@ -58,12 +59,12 @@ export default function ContactoPage() {
                 </div>
               </div>
 
-              <div className="relative h-[400px] flex justify-end">
+              <div className="relative h-[400px]">
                 <Image 
                   src="/images/contactImg.png" 
                   alt="Contacto" 
                   fill 
-                  className="object-contain object-right" 
+                  className="object-contain object-bottom" 
                 />
               </div>
             </div>
