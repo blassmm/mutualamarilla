@@ -3,17 +3,15 @@ import Image from "next/image"
 export default function ContactoPage() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative h-[200px] bg-white">
+      <section className="relative h-[140px] bg-white">
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-gray-800">CONTACTO</h1>
+          <h1 className="text-3xl mt-16 font-bold text-gray-800">CONTACTO</h1>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="bg-white px-6 ">
         <div className="mx-auto max-w-7xl">
-          <div className="bg-[#F4ED4E] rounded-t-3xl p-12 relative overflow-hidden">
+          <div className="bg-[#EDF000] rounded-t-3xl p-12 relative overflow-hidden">
             <div className="grid gap-12 lg:grid-cols-2 items-center">
               <div>
                 <p className="mb-8 text-gray-800 leading-relaxed">

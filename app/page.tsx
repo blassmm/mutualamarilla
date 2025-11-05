@@ -17,7 +17,6 @@ export default function Home() {
         <AyudaEconomica />
         <Contact />
         <Footer />
-              {/* WhatsApp Button */}
       <a
         href="https://wa.me/5492214205203"
         target="_blank"

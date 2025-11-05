@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function Services() {
   return (
     <section className="relative bg-white ">
-      <div className="absolute inset-0 bg-[#F4ED4E] z-0"
+      <div className="absolute inset-0 bg-[#fff89e] z-0"
            style={{
              clipPath: 'ellipse(120% 100% at 50% 100%)'
            }}
@@ -16,8 +16,7 @@ export default function Services() {
           <h2 className="mb-16 text-center text-4xl font-bold text-gray-800">SERVICIOS PARA AFILIADOS</h2>
 
           <div className="grid gap-8 md:grid-cols-3">
-            {/* Servicio de Odontología */}
-            <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
+            <div className="bg-white/30 rounded-2xl p-8 text-center">
               <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
                 <Image
                   src="/images/serviceOdonto.png"
@@ -37,8 +36,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Servicio de Internación Domiciliaria */}
-            <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
+            <div className="bg-white/30 rounded-2xl p-8 text-center">
               <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
                 <Image
                   src="/images/serviceIntDom.png"
@@ -59,8 +57,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Servicio de Subsidio de Nacimiento */}
-            <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
+            <div className="bg-white/30 rounded-2xl p-8 text-center">
               <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
                 <Image
                   src="/images/serviceSubNac.png"
@@ -83,10 +80,8 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Additional Services */}
           <div className="mt-8 grid gap-8 md:grid-cols-3">
-            {/* Servicio de Subsidio de Fallecimiento */}
-            <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
+            <div className="bg-white/30 rounded-2xl p-8 text-center">
               <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
                 <Image
                   src="/images/serviceSubFall.png"
@@ -108,8 +103,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Servicio de Asesoramiento Legal */}
-            <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
+            <div className="bg-white/30 rounded-2xl p-8 text-center">
               <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
                 <Image
                   src="/images/serviceAseLeg.png"
@@ -130,8 +124,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Servicio de Ayudas Económicas */}
-            <div className="bg-[#FFFEF0] rounded-lg p-8 text-center">
+            <div className="bg-white/30 rounded-2xl p-8 text-center">
               <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
                 <Image
                   src="/images/serviceAyuEco.png"
