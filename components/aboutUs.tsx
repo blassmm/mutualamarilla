@@ -32,11 +32,11 @@ export default function AboutUs() {
 
     return (
         <section id="quienes-somos" className="bg-white px-6">
-        <div className="mx-auto max-w-[1100px]">
-          <h2 className={`mb-4 text-3xl font-abel font-bold text-dark ${abel.variable}`}>QUIENES SOMOS</h2>
+        <div className="mx-auto max-w-[1100px] mt-36 sm:mt-20 md:mt-0">
+          <h2 className={`mb-6 lg:mb-0 text-2xl md:text-3xl font-abel font-bold text-dark ${abel.variable}`}>QUIENES SOMOS</h2>
 
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
-            <div className={`space-y-6 text-justify text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-20 items-center">
+            <div className={`space-y-4 md:space-y-6 text-justify text-sm text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
               <p>
                 En el año 2000, un grupo de personas visionarias y comprometidas decidió unirse para crear una
                 organización que pudiera satisfacer las necesidades de la comunidad. Así nació nuestra{" "}
@@ -62,23 +62,23 @@ export default function AboutUs() {
               <Link
                 href="#contacto"
                 onClick={scrollToContact}
-                className="group relative inline-block overflow-hidden rounded-sm bg-primary px-4 py-2 text-lg uppercase tracking-wide text-black transition-all duration-300 hover:pr-12"
+                className="group relative inline-block overflow-hidden rounded-sm bg-primary px-3 md:px-4 py-2 text-base md:text-lg uppercase tracking-wide text-black transition-all duration-300 hover:pr-10 md:hover:pr-12"
               >
                 <span className="relative z-10">CONTÁCTENOS</span>
-                <span className="absolute right-3 top-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <span className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100">
                   <Image 
                     src="/images/conversacion.png" 
                     alt="Contacto" 
-                    width={20} 
-                    height={20}
-                    className="object-contain"
+                    width={18} 
+                    height={18}
+                    className="object-contain md:w-5 md:h-5"
                   />
                 </span>
               </Link>
             </div>
 
-            <div className="relative flex justify-end">
-              <div className="relative h-[550px] w-[550px]">
+            <div className="relative flex justify-center lg:justify-end order-last">
+              <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[450px] md:w-[450px] lg:h-[550px] lg:w-[550px]">
                 <Image src="/images/aboutUsImg.png" alt="Equipo trabajando" fill className="object-contain" />
               </div>
             </div>
