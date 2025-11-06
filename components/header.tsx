@@ -107,8 +107,8 @@ export function Header() {
           <Link
             href="/"
             onClick={handleInicioClick}
-            className={` font-medium uppercase tracking-wide transition-colors ${
-              isActive("/") ? "text-[#F4ED4E]" : "text-gray-600 hover:text-[#F4ED4E]"
+            className={` font-medium uppercase text-dark tracking-wide transition-colors ${
+              isActive("/") ? "text-header" : "text-dark hover:text-header"
             }`}
           >
             Inicio
@@ -116,8 +116,8 @@ export function Header() {
           <Link
             href="/#quienes-somos"
             onClick={(e) => handleNavClick(e, "quienes-somos")}
-            className={` font-medium uppercase tracking-wide transition-colors ${
-              pathname === "/" && "text-gray-600 hover:text-[#F4ED4E]"
+            className={` font-medium uppercase text-dark tracking-wide transition-colors ${
+              pathname === "/" && "text-dark hover:text-header"
             }`}
           >
             Quienes Somos
@@ -125,8 +125,8 @@ export function Header() {
           <Link
             href="/#servicios"
             onClick={(e) => handleNavClick(e, "servicios")}
-            className={` font-medium uppercase tracking-wide transition-colors ${
-              pathname === "/" && "text-gray-600 hover:text-[#F4ED4E]"
+            className={` font-medium uppercase text-dark tracking-wide transition-colors ${
+              pathname === "/" && "text-dark hover:text-header"
             }`}
           >
             Servicios
@@ -134,7 +134,7 @@ export function Header() {
           <Link
             href="/ayuda-economica"
             className={` font-medium uppercase tracking-wide transition-colors ${
-              isActive("/ayuda-economica") ? "text-[#F4ED4E]" : "text-gray-600 hover:text-[#F4ED4E]"
+              isActive("/ayuda-economica") ? "text-header" : "text-dark hover:text-header"
             }`}
           >
             Ayuda Económica
@@ -142,8 +142,8 @@ export function Header() {
           <Link
             href="/#contacto"
             onClick={(e) => handleNavClick(e, "contacto")}
-            className={` font-medium uppercase tracking-wide transition-colors ${
-              pathname === "/" && "text-gray-600 hover:text-[#F4ED4E]"
+            className={` font-medium uppercase text-dark tracking-wide transition-colors ${
+              pathname === "/" && "text-dark hover:text-header"
             }`}
           >
             Contacto
@@ -185,7 +185,7 @@ export function Header() {
             href="/"
             onClick={handleInicioClick}
             className={`py-3 px-4 font-medium uppercase tracking-wide transition-colors ${
-              isActive("/") ? "text-[#F4ED4E]" : "text-gray-600 hover:bg-gray-50"
+              isActive("/") ? "text-header" : "text-dark hover:bg-gray-50"
             }`}
           >
             Inicio
@@ -193,14 +193,14 @@ export function Header() {
           <Link
             href="/#quienes-somos"
             onClick={(e) => handleNavClick(e, "quienes-somos")}
-            className="py-3 px-4 font-medium uppercase tracking-wide text-gray-600 hover:bg-gray-50 transition-colors"
+            className="py-3 px-4 font-medium uppercase tracking-wide text-dark hover:bg-gray-50 transition-colors"
           >
             Quienes Somos
           </Link>
           <Link
             href="/#servicios"
             onClick={(e) => handleNavClick(e, "servicios")}
-            className="py-3 px-4 font-medium uppercase tracking-wide text-gray-600 hover:bg-gray-50 transition-colors"
+            className="py-3 px-4 font-medium uppercase tracking-wide text-dark hover:bg-gray-50 transition-colors"
           >
             Servicios
           </Link>
@@ -208,7 +208,7 @@ export function Header() {
             href="/ayuda-economica"
             onClick={handleAyudaClick}
             className={`py-3 px-4 font-medium uppercase tracking-wide transition-colors ${
-              isActive("/ayuda-economica") ? "text-[#F4ED4E]" : "text-gray-600 hover:bg-gray-50"
+              isActive("/ayuda-economica") ? "text-header" : "text-dark hover:bg-gray-50"
             }`}
           >
             Ayuda Económica
@@ -216,7 +216,7 @@ export function Header() {
           <Link
             href="/#contacto"
             onClick={(e) => handleNavClick(e, "contacto")}
-            className="py-3 px-4 font-medium uppercase tracking-wide text-gray-600 hover:bg-gray-50 transition-colors"
+            className="py-3 px-4 font-medium uppercase tracking-wide text-dark hover:bg-gray-50 transition-colors"
           >
             Contacto
           </Link>
