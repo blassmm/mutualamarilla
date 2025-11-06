@@ -53,7 +53,6 @@ export default function Services() {
           <h2 className={`mb-16 text-center text-4xl font-bold text-dark ${abel.variable} font-abel`}>SERVICIOS PARA AFILIADOS</h2>
 
           <div className="grid gap-8 md:grid-cols-3">
-            {/* Card 1 */}
             <div 
               ref={(el) => { cardRefs.current[0] = el }}
               className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
@@ -79,7 +78,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 2 */}
             <div 
               ref={(el) => { cardRefs.current[1] = el }}
               className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
@@ -106,7 +104,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 3 */}
             <div 
               ref={(el) => { cardRefs.current[2] = el }}
               className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
@@ -136,7 +133,6 @@ export default function Services() {
           </div>
 
           <div className="mt-8 grid gap-8 md:grid-cols-3">
-            {/* Card 4 */}
             <div 
               ref={(el) => { cardRefs.current[3] = el }}
               className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
@@ -164,7 +160,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 5 */}
             <div 
               ref={(el) => { cardRefs.current[4] = el }}
               className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
@@ -191,7 +186,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 6 */}
             <div 
               ref={(el) => { cardRefs.current[5] = el }}
               className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"

@@ -13,7 +13,6 @@
   --font-abel: var(--font-abel);
   --font-open-sans: var(--font-open-sans);
   
-  /* Colores personalizados */
   --color-dark: #333333;
   --color-medium: #666666;
   --color-primary: #EDF000;
@@ -34,7 +33,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Oculta Next.js DevTools (solo en dev) */
 #__next_devtools,
 button[aria-label="Open Next.js DevTools"],
 .next-devtools,
@@ -42,7 +40,6 @@ button[aria-label="Open Next.js DevTools"],
   display: none !important;
 }
 
-/* Fuente Abel */
 @layer utilities {
   .font-abel {
     font-family: var(--font-abel), sans-serif;
