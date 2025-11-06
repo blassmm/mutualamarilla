@@ -2,15 +2,28 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import localFont from "next/font/local"
+
+const abel = localFont({
+  src: "../public/fonts/Abel-Regular.ttf",
+  variable: "--font-abel",
+})
+
+const openSans = localFont({
+  src: "../public/fonts/OpenSans-Regular.ttf",
+  variable: "--font-open-sans",
+})
+
+
 
 export default function AboutUs() {
     return (
         <section className="bg-white px-6  ">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-12 text-4xl font-bold text-gray-800">QUIENES SOMOS</h2>
+          <h2 className={`mb-12 text-4xl font-abel font-bold text-dark ${abel.variable}`}>QUIENES SOMOS</h2>
 
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
-            <div className="space-y-6 text-justify text-gray-700 leading-relaxed">
+            <div className={`space-y-6 text-justify text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
               <p>
                 En el año 2000, un grupo de personas visionarias y comprometidas decidió unirse para crear una
                 organización que pudiera satisfacer las necesidades de la comunidad. Así nació nuestra{" "}
@@ -35,7 +48,7 @@ export default function AboutUs() {
 
               <Link
                 href="/contacto"
-                className="inline-block bg-[#F4ED4E] px-8 py-3 text-sm font-bold uppercase tracking-wide text-gray-800 hover:bg-[#e8e142] transition-colors"
+                className="inline-block rounded-sm bg-primary px-4 py-2 text-lg  font-medium uppercase tracking-wide text-black hover:bg-[#e8e142] transition-colors"
               >
                 CONTÁCTENOS
               </Link>

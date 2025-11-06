@@ -10,6 +10,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-abel: var(--font-abel);
+  --font-open-sans: var(--font-open-sans);
+  
+  /* Colores personalizados */
+  --color-dark: #333333;
+  --color-medium: #666666;
+  --color-primary: #EDF000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,4 +38,15 @@ button[aria-label="Open Next.js DevTools"],
 .next-devtools,
 .next-debugger {
   display: none !important;
+}
+
+/* Fuente Abel */
+@layer utilities {
+  .font-abel {
+    font-family: var(--font-abel), sans-serif;
+  }
+  
+  .font-open-sans {
+    font-family: var(--font-open-sans), sans-serif;
+  }
 }

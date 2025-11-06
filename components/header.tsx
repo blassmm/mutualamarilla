@@ -3,6 +3,12 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
+import localFont from "next/font/local"
+
+const abel = localFont({
+  src: "../public/fonts/Abel-Regular.ttf",
+  variable: "--font-abel",
+})
 
 export function Header() {
   const pathname = usePathname()
@@ -12,7 +18,7 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm ${abel.variable}`}>
       <div className="mx-8 flex h-20 items-center justify-between ">
         <div>
         <Link href="/" className="flex items-center">
@@ -28,10 +34,10 @@ export function Header() {
         </Link>
         </div>
         <div>
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center gap-8 font-abel">
           <Link
             href="/"
-            className={`text-sm font-medium uppercase tracking-wide transition-colors ${
+            className={` font-medium uppercase tracking-wide transition-colors ${
               isActive("/") ? "text-[#F4ED4E]" : "text-gray-600 hover:text-[#F4ED4E]"
             }`}
           >
@@ -39,7 +45,7 @@ export function Header() {
           </Link>
           <Link
             href="/quienes-somos"
-            className={`text-sm font-medium uppercase tracking-wide transition-colors ${
+            className={` font-medium uppercase tracking-wide transition-colors ${
               isActive("/quienes-somos") ? "text-[#F4ED4E]" : "text-gray-600 hover:text-[#F4ED4E]"
             }`}
           >
@@ -47,7 +53,7 @@ export function Header() {
           </Link>
           <Link
             href="/servicios"
-            className={`text-sm font-medium uppercase tracking-wide transition-colors ${
+            className={` font-medium uppercase tracking-wide transition-colors ${
               isActive("/servicios") ? "text-[#F4ED4E]" : "text-gray-600 hover:text-[#F4ED4E]"
             }`}
           >
@@ -55,7 +61,7 @@ export function Header() {
           </Link>
           <Link
             href="/ayuda-economica"
-            className={`text-sm font-medium uppercase tracking-wide transition-colors ${
+            className={` font-medium uppercase tracking-wide transition-colors ${
               isActive("/ayuda-economica") ? "text-[#F4ED4E]" : "text-gray-600 hover:text-[#F4ED4E]"
             }`}
           >
@@ -63,7 +69,7 @@ export function Header() {
           </Link>
           <Link
             href="/contacto"
-            className={`text-sm font-medium uppercase tracking-wide transition-colors ${
+            className={` font-medium uppercase tracking-wide transition-colors ${
               isActive("/contacto") ? "text-[#F4ED4E]" : "text-gray-600 hover:text-[#F4ED4E]"
             }`}
           >
