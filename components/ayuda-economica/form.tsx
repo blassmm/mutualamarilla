@@ -40,69 +40,71 @@ export function FormularioAyuda() {
   }
 
   return (
-    <section className={`bg-white py-16 ${openSans.variable}`}>
-      <div className="container mx-auto px-24 font-open-sans">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div className="space-y-6">
+    <section className={`bg-white py-8 sm:py-12 md:py-16 ${openSans.variable}`}>
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24 font-open-sans">
+        <div className="grid gap-8 sm:gap-10 md:gap-12 lg:grid-cols-2">
+          {/* Preguntas - Primera columna en desktop (izquierda), segundo en mobile (abajo) */}
+          <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
             <div>
-              <h3 className="text-3xl font-extrabold mb-4 text-dark ">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3 sm:mb-4 text-dark">
                 ¿A quién está destinado?
               </h3>
-              <p className="text-black ">
+              <p className="text-sm sm:text-base text-black">
                 Estas ayudas económicas son <strong>para empleados públicos de la Provincia de Buenos Aires.</strong>
               </p>
             </div>
 
             <div>
-              <h3 className="text-3xl font-bold mb-4 text-dark font-abel">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-dark font-abel">
                 ¿Cuánto tarda en acreditarse?
               </h3>
-              <p className="text-black ">
+              <p className="text-sm sm:text-base text-black">
                 Se te acredita en el día!
               </p>
             </div>
 
             <div>
-              <h3 className="text-3xl font-bold mb-4 text-dark font-abel">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-dark font-abel">
                 ¿Cómo cobran la cuota?
               </h3>
-              <p className="text-black ">
+              <p className="text-sm sm:text-base text-black">
                 Se le cobra directamente del recibo de sueldo
               </p>
             </div>
 
             <div>
-              <h3 className="text-3xl font-bold mb-4 text-dark font-abel">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-dark font-abel">
                 ¿Cómo lo solicito?
               </h3>
-              <p className="text-black  mb-4">
+              <p className="text-sm sm:text-base text-black mb-4">
                 Completa el formulario o envianos un Whatsapp al <strong>2214205203</strong>
               </p>
               <a
                 href="https://wa.me/5492214205203"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-block overflow-hidden rounded bg-[#25D366] px-8 py-3 text-lg text-black border transition-all duration-300 hover:pr-16 font-abel"
+                className="group relative inline-block overflow-hidden rounded bg-[#25D366] px-4 sm:px-6 md:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg text-white transition-all duration-300 hover:pr-10 sm:hover:pr-12 md:hover:pr-16 font-abel"
               >
                 <span className="relative z-10">Contactate por Whatsapp</span>
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <span className="absolute right-2 sm:right-3 md:right-4 top-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100">
                   <Image 
                     src="/images/conversacion.png" 
                     alt="WhatsApp" 
-                    width={20} 
-                    height={20}
-                    className="object-contain text-black"
+                    width={16} 
+                    height={16}
+                    className="object-contain brightness-0 invert sm:w-5 sm:h-5"
                   />
                 </span>
               </a>
             </div>
           </div>
 
-          <div>
-            <h3 className="text-3xl font-medium mb-8 text-dark font-abel">
+          {/* Formulario - Segunda columna en desktop (derecha), primero en mobile (arriba) */}
+          <div className="order-1 lg:order-2">
+            <h3 className="text-2xl sm:text-3xl font-medium mb-6 sm:mb-8 text-dark font-abel">
               Datos Personales
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
                 <input
                   type="text"
@@ -111,7 +113,7 @@ export function FormularioAyuda() {
                   required
                   value={formData.nombreApellido}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
               </div>
 
@@ -123,7 +125,7 @@ export function FormularioAyuda() {
                   required
                   value={formData.sexo}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
               </div>
 
@@ -135,7 +137,7 @@ export function FormularioAyuda() {
                   required
                   value={formData.dni}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
               </div>
 
@@ -147,7 +149,7 @@ export function FormularioAyuda() {
                   required
                   value={formData.localidad}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
               </div>
 
@@ -159,7 +161,7 @@ export function FormularioAyuda() {
                   required
                   value={formData.telefonoCelular}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
               </div>
 
@@ -171,11 +173,11 @@ export function FormularioAyuda() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
               </div>
 
-              <h3 className="text-3xl font-medium mt-8 mb-6 text-dark font-abel">
+              <h3 className="text-2xl sm:text-3xl font-medium mt-6 sm:mt-8 mb-4 sm:mb-6 text-dark font-abel">
                 Datos Laborales
               </h3>
 
@@ -187,11 +189,11 @@ export function FormularioAyuda() {
                   required
                   value={formData.reparticion}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
               </div>
 
-              <h3 className="text-3xl font-medium mt-8 mb-6 text-dark font-abel">
+              <h3 className="text-2xl sm:text-3xl font-medium mt-6 sm:mt-8 mb-4 sm:mb-6 text-dark font-abel">
                 Monto a solicitar
               </h3>
 
@@ -203,7 +205,7 @@ export function FormularioAyuda() {
                   required
                   value={formData.montoSolicitar}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
               </div>
 
@@ -214,11 +216,11 @@ export function FormularioAyuda() {
                   rows={6}
                   value={formData.mensaje}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary resize-none placeholder:text-medium"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary resize-none placeholder:text-medium"
                 />
               </div>
 
-              <p className="text-sm text-medium ">
+              <p className="text-xs sm:text-sm text-medium">
                 Envienos a{" "}
                 <a href="mailto:consultas@mutualamarilla.com" className="text-black underline">
                   consultas@mutualamarilla.com
@@ -228,7 +230,7 @@ export function FormularioAyuda() {
 
               <button
                 type="submit"
-                className="bg-primary text-black px-4 py-2 rounded hover:bg-yellow-400 transition-colors font-abel text-lg"
+                className="w-full sm:w-auto bg-primary text-black px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded hover:bg-yellow-400 transition-colors font-abel text-base sm:text-lg"
               >
                 Enviar
               </button>
