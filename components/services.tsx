@@ -41,23 +41,26 @@ export default function Services() {
   }, [visibleCards])
 
   return (
-    <section id="servicios" className="relative bg-white ">
+    <section id="servicios" className="relative bg-white">
       <div className="absolute inset-0 bg-secondary z-0"
            style={{
-             clipPath: 'ellipse(120% 100% at 50% 100%)'
+             clipPath: 'ellipse(150% 100% at 50% 100%)'
            }}
       />
       
-      <div className="relative z-10 px-6 py-20">
+      <div className="relative z-10 px-4 sm:px-6 mt-10 md:mt-0 py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-[1200px]">
-          <h2 className={`mb-16 text-center text-4xl font-bold text-dark ${abel.variable} font-abel`}>SERVICIOS PARA AFILIADOS</h2>
+          <h2 className={`mb-8 md:mb-12 lg:mb-16 text-center text-2xl sm:text-3xl md:text-4xl font-bold text-dark ${abel.variable} font-abel`}>
+            SERVICIOS PARA AFILIADOS
+          </h2>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 px-24">
+            {/* Card 1 - Odontología */}
             <div 
               ref={(el) => { cardRefs.current[0] = el }}
-              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+              className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${
                 visibleCards.includes(0) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
@@ -68,8 +71,10 @@ export default function Services() {
                   className="object-cover"
                 />
               </div>
-              <h3 className={`mb-4 text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>SERVICIO DE ODONTOLOGÍA</h3>
-              <p className={`text-justify text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
+              <h3 className={`mb-3 sm:mb-4 text-lg sm:text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>
+                SERVICIO DE ODONTOLOGÍA
+              </h3>
+              <p className={`text-justify text-sm text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
                 Nuestro servicio de odontología está diseñado para brindar a nuestros asociados una atención dental
                 integral y de calidad. Contamos con un equipo de profesionales altamente capacitados que se encargan de
                 realizar desde limpiezas y tratamientos preventivos hasta procedimientos más complejos. Nuestro objetivo
@@ -78,11 +83,12 @@ export default function Services() {
               </p>
             </div>
 
+            {/* Card 2 - Internación Domiciliaria */}
             <div 
               ref={(el) => { cardRefs.current[1] = el }}
-              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+              className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${
                 visibleCards.includes(1) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
@@ -93,8 +99,10 @@ export default function Services() {
                   className="object-cover"
                 />
               </div>
-              <h3 className={`mb-4 text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>SERVICIO DE INTERNACIÓN DOMICILIARIA</h3>
-              <p className={`text-justify  text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
+              <h3 className={`mb-3 sm:mb-4 text-lg sm:text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>
+                SERVICIO DE INTERNACIÓN DOMICILIARIA
+              </h3>
+              <p className={`text-justify text-sm text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
                 En situaciones en las que nuestros asociados requieren atención médica intensiva, pero prefieren o
                 necesitan permanecer en la comodidad de su hogar, ofrecemos el servicio de internación domiciliaria.
                 Contamos con un equipo de profesionales médicos y de enfermería altamente capacitados que brindan
@@ -104,11 +112,12 @@ export default function Services() {
               </p>
             </div>
 
+            {/* Card 3 - Subsidio de Nacimiento */}
             <div 
               ref={(el) => { cardRefs.current[2] = el }}
-              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+              className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${
                 visibleCards.includes(2) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
@@ -119,8 +128,10 @@ export default function Services() {
                   className="object-cover"
                 />
               </div>
-              <h3 className={`mb-4 text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>SERVICIO DE SUBSIDIO DE NACIMIENTO</h3>
-              <p className={`text-justify  text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
+              <h3 className={`mb-3 sm:mb-4 text-lg sm:text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>
+                SERVICIO DE SUBSIDIO DE NACIMIENTO
+              </h3>
+              <p className={`text-justify text-sm text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
                 En nuestra mutual, comprendemos que la llegada de un nuevo miembro a la familia es un acontecimiento
                 especial y que puede implicar gastos adicionales. Por eso, ofrecemos un servicio de subsidio de
                 nacimiento. Mediante este servicio, brindamos un apoyo económico a nuestros asociados que han dado la
@@ -130,14 +141,13 @@ export default function Services() {
                 contribuya a la estabilidad y tranquilidad de nuestros asociados.
               </p>
             </div>
-          </div>
 
-          <div className="mt-8 grid gap-8 md:grid-cols-3">
+            {/* Card 4 - Subsidio de Fallecimiento */}
             <div 
               ref={(el) => { cardRefs.current[3] = el }}
-              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+              className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${
                 visibleCards.includes(3) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
@@ -148,8 +158,10 @@ export default function Services() {
                   className="object-cover"
                 />
               </div>
-              <h3 className={`mb-4 text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>SERVICIO DE SUBSIDIO DE FALLECIMIENTO</h3>
-              <p className={`text-justify  text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
+              <h3 className={`mb-3 sm:mb-4 text-lg sm:text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>
+                SERVICIO DE SUBSIDIO DE FALLECIMIENTO
+              </h3>
+              <p className={`text-justify text-sm text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
                 En momentos de pérdida y duelo, nuestra mutual está presente para brindar apoyo a nuestros asociados y
                 sus familias. A través de nuestro servicio de subsidio de fallecimiento, ofrecemos un respaldo económico
                 que ayuda a cubrir los gastos relacionados con los servicios funerarios y otros gastos asociados.
@@ -160,11 +172,12 @@ export default function Services() {
               </p>
             </div>
 
+            {/* Card 5 - Asesoramiento Legal */}
             <div 
               ref={(el) => { cardRefs.current[4] = el }}
-              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+              className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${
                 visibleCards.includes(4) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
@@ -175,8 +188,10 @@ export default function Services() {
                   className="object-cover"
                 />
               </div>
-              <h3 className={`mb-4 text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>SERVICIO DE ASESORAMIENTO LEGAL</h3>
-              <p className={`text-justify  text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
+              <h3 className={`mb-3 sm:mb-4 text-lg sm:text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>
+                SERVICIO DE ASESORAMIENTO LEGAL
+              </h3>
+              <p className={`text-justify text-sm text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
                 En nuestra mutual, entendemos la importancia y la complejidad del ámbito legal. Por eso, ofrecemos a
                 nuestros asociados un servicio de asesoramiento legal integral. Contamos con un equipo de abogados
                 especializados que brindan asesoría y orientación en diversas áreas legales, como derecho laboral,
@@ -186,11 +201,12 @@ export default function Services() {
               </p>
             </div>
 
+            {/* Card 6 - Ayudas Económicas */}
             <div 
               ref={(el) => { cardRefs.current[5] = el }}
-              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+              className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${
                 visibleCards.includes(5) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
@@ -201,8 +217,10 @@ export default function Services() {
                   className="object-cover"
                 />
               </div>
-              <h3 className={`mb-4 text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>SERVICIO DE AYUDAS ECONÓMICAS</h3>
-              <p className={`text-justify  text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
+              <h3 className={`mb-3 sm:mb-4 text-lg sm:text-xl font-bold text-start text-dark ${abel.variable} font-abel`}>
+                SERVICIO DE AYUDAS ECONÓMICAS
+              </h3>
+              <p className={`text-justify text-sm text-medium leading-relaxed ${openSans.variable} font-open-sans`}>
                 En nuestra mutual, nos preocupamos por el bienestar económico de nuestros asociados. Por eso, ofrecemos
                 un servicio de ayudas económicas diseñado para brindar apoyo en situaciones de dificultad financiera. A
                 través de este servicio, nuestros asociados pueden acceder a subsidios, préstamos y asistencia económica
