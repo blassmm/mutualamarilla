@@ -20,7 +20,7 @@ export default function AboutUs() {
     return (
         <section className="bg-white px-6  ">
         <div className="mx-auto max-w-7xl">
-          <h2 className={`mb-12 text-4xl font-abel font-bold text-dark ${abel.variable}`}>QUIENES SOMOS</h2>
+          <h2 className={`mb-4 text-4xl font-abel font-bold text-dark ${abel.variable}`}>QUIENES SOMOS</h2>
 
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
             <div className={`space-y-6 text-justify text-medium leading-relaxed ${openSans.variable} font-open-sans`}>

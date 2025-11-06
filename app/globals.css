@@ -18,6 +18,7 @@
   --color-medium: #666666;
   --color-primary: #EDF000;
   --color-secondary: #FFF89E;
+  --color-footer: #1F1F1F;
 }
 
 @media (prefers-color-scheme: dark) {
