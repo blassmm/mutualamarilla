@@ -14,11 +14,9 @@ const openSans = localFont({
   variable: "--font-open-sans",
 })
 
-
-
 export default function AboutUs() {
     return (
-        <section className="bg-white px-6  ">
+        <section id="quienes-somos" className="bg-white px-6  ">
         <div className="mx-auto max-w-7xl">
           <h2 className={`mb-4 text-4xl font-abel font-bold text-dark ${abel.variable}`}>QUIENES SOMOS</h2>
 

@@ -13,7 +13,7 @@ const openSans = localFont({
 
 export default function ContactoPage() {
   return (
-    <main>
+    <main id="contacto">
       <section className="relative h-[160px] bg-white">
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className={`text-3xl mt-16 font-bold text-dark ${abel.variable} font-abel`}>CONTACTO</h1>

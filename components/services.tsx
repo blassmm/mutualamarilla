@@ -15,7 +15,7 @@ const openSans = localFont({
 
 export default function Services() {
   return (
-    <section className="relative bg-white ">
+    <section id="servicios" className="relative bg-white ">
       <div className="absolute inset-0 bg-secondary z-0"
            style={{
              clipPath: 'ellipse(120% 100% at 50% 100%)'
