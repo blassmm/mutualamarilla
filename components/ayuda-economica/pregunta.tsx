@@ -15,20 +15,20 @@ const openSans = localFont({
 export function Pregunta() {
   return (
     <section className={`bg-primary py-20 ${abel.variable} ${openSans.variable}`}>
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-5xl font-bold text-dark mb-4 font-open-sans">
+      <div className="container mx-auto px-6 text-center font-open-sans">
+        <h2 className="text-6xl font-bold text-dark mb-4">
           ¿Necesitas una ayuda económica?
         </h2>
-        <p className="text-2xl text-dark mb-2 font-font-open-sans">
+        <p className="text-3xl text-dark mb-2">
           Nosotros te damos una mano.
         </p>
-        <p className="text-xs text-black mb-8 font-open-sans">
+        <p className="text-sm text-black mb-8">
           Ayudas económicas para <strong>empleados públicos de la Provincia de Buenos Aires</strong>
         </p>
-        <p className="text-xs text-black font-open-sans">
+        <p className="text-sm text-black">
           Completá el formulario o envianos un Whatsapp al <strong>2214205203</strong> y evaluaremos tu caso para brindarte la ayuda que necesitas.
         </p>
-        <p className="text-xs text-black mt-2 font-open-sans">
+        <p className="text-sm text-black mt-2">
           Muchas gracias por formar parte de <strong>Mutual Amarilla</strong>.
         </p>
       </div>
