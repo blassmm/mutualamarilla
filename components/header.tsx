@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 import localFont from "next/font/local"
 
 const abel = localFont({
@@ -13,6 +14,20 @@ const abel = localFont({
 export function Header() {
   const pathname = usePathname()
   const router = useRouter()
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const isActive = (path: string) => {
     return pathname === path
@@ -21,7 +36,7 @@ export function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      const headerOffset = 80 // altura del header fijo
+      const headerOffset = isScrolled ? 64 : 80
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
@@ -49,11 +64,19 @@ export function Header() {
   }
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm ${abel.variable}`}>
-      <div className="mx-8 flex h-20 items-center justify-between ">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm transition-all duration-300 ${abel.variable} ${
+        isScrolled ? "py-2" : "py-4"
+      }`}
+    >
+      <div className="mx-8 flex items-center justify-between">
         <div>
           <Link href="/" className="flex items-center">
-            <div className="relative h-16 w-16">
+            <div
+              className={`relative transition-all duration-300 ${
+                isScrolled ? "h-12 w-12" : "h-16 w-16"
+              }`}
+            >
               <Image
                 src="/images/logoHeader.png"
                 alt="AMAT - Mutual Amarilla de Trabajadores"

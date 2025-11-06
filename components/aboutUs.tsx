@@ -15,6 +15,21 @@ const openSans = localFont({
 })
 
 export default function AboutUs() {
+    const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      const element = document.getElementById("contacto")
+      if (element) {
+        const headerOffset = 80
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        })
+      }
+    }
+
     return (
         <section id="quienes-somos" className="bg-white px-6  ">
         <div className="mx-auto max-w-7xl">
@@ -45,10 +60,20 @@ export default function AboutUs() {
               </p>
 
               <Link
-                href="/contacto"
-                className="inline-block rounded-sm bg-primary px-4 py-2 text-lg  font-medium uppercase tracking-wide text-black hover:bg-[#e8e142] transition-colors"
+                href="#contacto"
+                onClick={scrollToContact}
+                className="group relative inline-block overflow-hidden rounded-sm bg-primary px-4 py-2 text-lg uppercase tracking-wide text-black transition-all duration-300 hover:pr-12"
               >
-                CONTÁCTENOS
+                <span className="relative z-10">CONTÁCTENOS</span>
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <Image 
+                    src="/images/conversacion.png" 
+                    alt="Contacto" 
+                    width={20} 
+                    height={20}
+                    className="object-contain"
+                  />
+                </span>
               </Link>
             </div>
 
