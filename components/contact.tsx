@@ -22,15 +22,15 @@ export default function ContactoPage() {
 
       <section className="bg-white px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="bg-primary h-[420px] rounded-t-3xl p-12 relative overflow-hidden flex items-center">
-            <div className="grid gap-12 lg:grid-cols-3 items-center w-full">
+          <div className="bg-primary h-full lg:h-[420px] rounded-t-3xl p-8 lg:p-12 relative overflow-hidden flex items-center">
+            <div className="grid gap-4 lg:gap-12 lg:grid-cols-3 items-center w-full">
               <div className={`text-medium ${openSans.variable} font-open-sans`}>
-                <p className="mb-8 leading-relaxed">
+                <p className="mb-4 lg:mb-8 leading-relaxed">
                   Nuestro equipo estará encantado de responder a tus consultas, brindarte información adicional y
                   asistirte en todo lo que necesites.
                 </p>
 
-                <div className="mb-8">
+                <div className="mb-4 lg:mb-8">
                   <h3 className="mb-3  font-bold uppercase">HORARIO DE ATENCIÓN:</h3>
                   <p className="">Lunes a viernes: 08:00 – 16:00</p>
                   <p className="">Sábados: 09:00 – 13:00</p>
@@ -75,7 +75,7 @@ export default function ContactoPage() {
                   src="/images/contactImg.png" 
                   alt="Contacto" 
                   fill 
-                  className="object-contain object-bottom" 
+                  className="object-contain object-bottom mt-10 lg:mt-0" 
                 />
               </div>
             </div>
