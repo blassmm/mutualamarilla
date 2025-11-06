@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import localFont from "next/font/local"
 
 const abel = localFont({
@@ -32,8 +33,8 @@ export default function AyudaEconomica() {
               Si estás necesitando una ayuda económica no dudes en contar con nosotros. Completa el formulario y nos
               pondremos en contacto.
             </h1>
-            <a
-              href="#formulario"
+            <Link
+              href="/ayuda-economica"
               className="group relative inline-block overflow-hidden rounded-sm bg-primary px-4 py-2 text-lg uppercase tracking-wide text-black transition-all duration-300 hover:pr-12"
             >
               <span className="relative z-10">COMPLETAR FORMULARIO</span>
@@ -46,7 +47,7 @@ export default function AyudaEconomica() {
                   className="object-contain"
                 />
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -51,13 +51,18 @@ export function Header() {
     if (pathname === "/") {
       e.preventDefault()
       scrollToSection(sectionId)
+    } else {
+      router.push(`/#${sectionId}`)
     }
   }
 
   const handleInicioClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     if (pathname === "/") {
-      window.location.href = "/"
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
     } else {
       router.push("/")
     }
@@ -117,8 +122,7 @@ export function Header() {
               Servicios
             </Link>
             <Link
-              href="/#ayuda-economica"
-              onClick={(e) => handleNavClick(e, "ayuda-economica")}
+              href="/ayuda-economica"
               className={` font-medium uppercase tracking-wide transition-colors ${
                 isActive("/ayuda-economica") ? "text-[#F4ED4E]" : "text-gray-600 hover:text-[#F4ED4E]"
               }`}
