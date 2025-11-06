@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import localFont from "next/font/local"
 import { useState } from "react"
 
@@ -29,7 +30,6 @@ export function FormularioAyuda() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log(formData)
-    // Aquí puedes agregar la lógica para enviar el formulario
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,7 +43,6 @@ export function FormularioAyuda() {
     <section className={`bg-white py-16 ${openSans.variable}`}>
       <div className="container mx-auto px-24 font-open-sans">
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Columna Izquierda - Información */}
           <div className="space-y-6">
             <div>
               <h3 className="text-3xl font-extrabold mb-4 text-dark ">
@@ -83,14 +82,22 @@ export function FormularioAyuda() {
                 href="https://wa.me/5492214205203"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#25D366] text-black border px-8 py-3 rounded hover:bg-[#20BA5A] transition-colors font-abel text-lg"
+                className="group relative inline-block overflow-hidden rounded bg-[#25D366] px-8 py-3 text-lg text-black border transition-all duration-300 hover:pr-16 font-abel"
               >
-                Contactate por Whatsapp
+                <span className="relative z-10">Contactate por Whatsapp</span>
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <Image 
+                    src="/images/conversacion.png" 
+                    alt="WhatsApp" 
+                    width={20} 
+                    height={20}
+                    className="object-contain text-black"
+                  />
+                </span>
               </a>
             </div>
           </div>
 
-          {/* Columna Derecha - Formulario */}
           <div>
             <h3 className="text-3xl font-medium mb-8 text-dark font-abel">
               Datos Personales
