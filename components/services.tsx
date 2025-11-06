@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import localFont from "next/font/local"
+import { useEffect, useRef, useState } from "react"
 
 const abel = localFont({
   src: "../public/fonts/Abel-Regular.ttf",
@@ -14,6 +15,31 @@ const openSans = localFont({
 })
 
 export default function Services() {
+  const [visibleCards, setVisibleCards] = useState<number[]>([])
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = cardRefs.current.indexOf(entry.target as HTMLDivElement)
+            if (index !== -1 && !visibleCards.includes(index)) {
+              setVisibleCards((prev) => [...prev, index])
+            }
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    cardRefs.current.forEach((card) => {
+      if (card) observer.observe(card)
+    })
+
+    return () => observer.disconnect()
+  }, [visibleCards])
+
   return (
     <section id="servicios" className="relative bg-white ">
       <div className="absolute inset-0 bg-secondary z-0"
@@ -27,8 +53,14 @@ export default function Services() {
           <h2 className={`mb-16 text-center text-4xl font-bold text-dark ${abel.variable} font-abel`}>SERVICIOS PARA AFILIADOS</h2>
 
           <div className="grid gap-8 md:grid-cols-3">
-            <div className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full">
-              <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
+            {/* Card 1 */}
+            <div 
+              ref={(el) => { cardRefs.current[0] = el }}
+              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+            >
+              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${
+                visibleCards.includes(0) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}>
                 <Image
                   src="/images/serviceOdonto.png"
                   alt="Servicio de Odontología"
@@ -47,8 +79,14 @@ export default function Services() {
               </p>
             </div>
 
-            <div className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full">
-              <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
+            {/* Card 2 */}
+            <div 
+              ref={(el) => { cardRefs.current[1] = el }}
+              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+            >
+              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${
+                visibleCards.includes(1) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}>
                 <Image
                   src="/images/serviceIntDom.png"
                   alt="Servicio de Internación Domiciliaria"
@@ -68,8 +106,14 @@ export default function Services() {
               </p>
             </div>
 
-            <div className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full">
-              <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
+            {/* Card 3 */}
+            <div 
+              ref={(el) => { cardRefs.current[2] = el }}
+              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+            >
+              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${
+                visibleCards.includes(2) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}>
                 <Image
                   src="/images/serviceSubNac.png"
                   alt="Servicio de Subsidio de Nacimiento"
@@ -92,8 +136,14 @@ export default function Services() {
           </div>
 
           <div className="mt-8 grid gap-8 md:grid-cols-3">
-            <div className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full">
-              <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
+            {/* Card 4 */}
+            <div 
+              ref={(el) => { cardRefs.current[3] = el }}
+              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+            >
+              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${
+                visibleCards.includes(3) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}>
                 <Image
                   src="/images/serviceSubFall.png"
                   alt="Servicio de Subsidio de Fallecimiento"
@@ -114,8 +164,14 @@ export default function Services() {
               </p>
             </div>
 
-            <div className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full">
-              <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
+            {/* Card 5 */}
+            <div 
+              ref={(el) => { cardRefs.current[4] = el }}
+              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+            >
+              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${
+                visibleCards.includes(4) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}>
                 <Image
                   src="/images/serviceAseLeg.png"
                   alt="Servicio de Asesoramiento Legal"
@@ -135,8 +191,14 @@ export default function Services() {
               </p>
             </div>
 
-            <div className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full">
-              <div className="mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full">
+            {/* Card 6 */}
+            <div 
+              ref={(el) => { cardRefs.current[5] = el }}
+              className="bg-white/30 rounded-3xl p-6 text-center flex flex-col h-full"
+            >
+              <div className={`mx-auto mb-6 h-[200px] w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${
+                visibleCards.includes(5) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}>
                 <Image
                   src="/images/serviceAyuEco.png"
                   alt="Servicio de Ayudas Económicas"
