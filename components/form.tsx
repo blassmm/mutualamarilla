@@ -15,7 +15,7 @@ const openSans = localFont({
 
 export default function AyudaEconomica() {
   return (
-      <section className="relative h-[600px]">
+      <section id="ayuda-economica" className="relative h-[600px]">
         <Image 
           src="/images/formImg.jpg" 
           alt="Ayuda Económica" 
@@ -34,9 +34,18 @@ export default function AyudaEconomica() {
             </h1>
             <a
               href="#formulario"
-              className="inline-block rounded-sm bg-primary px-4 py-2 font-[350] text-lg uppercase text-black hover:bg-[#e8e142] transition-colors"
+              className="group relative inline-block overflow-hidden rounded-sm bg-primary px-4 py-2 text-lg uppercase tracking-wide text-black transition-all duration-300 hover:pr-12"
             >
-              COMPLETAR FORMULARIO
+              <span className="relative z-10">COMPLETAR FORMULARIO</span>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <Image 
+                  src="/images/conversacion.png" 
+                  alt="Formulario" 
+                  width={20} 
+                  height={20}
+                  className="object-contain"
+                />
+              </span>
             </a>
           </div>
         </div>
