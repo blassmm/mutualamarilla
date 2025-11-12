@@ -102,7 +102,6 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Menú Desktop */}
         <nav className="hidden lg:flex items-center gap-8 font-abel">
           <Link
             href="/"
@@ -150,7 +149,6 @@ export function Header() {
           </Link>
         </nav>
 
-        {/* Botón Hamburguesa */}
         <button
           className="lg:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -174,7 +172,6 @@ export function Header() {
         </button>
       </div>
 
-      {/* Menú Mobile */}
       <div
         className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 overflow-hidden ${
           isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"

@@ -43,7 +43,6 @@ export function FormularioAyuda() {
     <section className={`bg-white py-8 sm:py-12 md:py-16 ${openSans.variable}`}>
       <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24 font-open-sans">
         <div className="grid gap-8 sm:gap-10 md:gap-12 lg:grid-cols-2">
-          {/* Preguntas - Primera columna en desktop (izquierda), segundo en mobile (abajo) */}
           <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
             <div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-3 sm:mb-4 text-dark">
@@ -99,7 +98,6 @@ export function FormularioAyuda() {
             </div>
           </div>
 
-          {/* Formulario - Segunda columna en desktop (derecha), primero en mobile (arriba) */}
           <div className="order-1 lg:order-2">
             <h3 className="text-2xl sm:text-3xl font-medium mb-6 sm:mb-8 text-dark font-abel">
               Datos Personales

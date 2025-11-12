@@ -55,7 +55,6 @@ export default function Services() {
           </h2>
 
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 px-24">
-            {/* Card 1 - Odontología */}
             <div 
               ref={(el) => { cardRefs.current[0] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
@@ -83,7 +82,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 2 - Internación Domiciliaria */}
             <div 
               ref={(el) => { cardRefs.current[1] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
@@ -112,7 +110,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 3 - Subsidio de Nacimiento */}
             <div 
               ref={(el) => { cardRefs.current[2] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
@@ -142,7 +139,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 4 - Subsidio de Fallecimiento */}
             <div 
               ref={(el) => { cardRefs.current[3] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
@@ -172,7 +168,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 5 - Asesoramiento Legal */}
             <div 
               ref={(el) => { cardRefs.current[4] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
@@ -201,7 +196,6 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Card 6 - Ayudas Económicas */}
             <div 
               ref={(el) => { cardRefs.current[5] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
