@@ -10,7 +10,7 @@ export function Hero() {
                clipPath: 'ellipse(80% 70% at 50% 0%)'
              }}>
           <Image
-            src="/images/heroImg.jpg"
+            src="/images/heroImg.webp"
             alt="Manos unidas en equipo"
             fill
             className="object-cover"
@@ -23,7 +23,7 @@ export function Hero() {
         <div className="absolute left-1/2  -bottom-10 sm:bottom-6 md:bottom-10 -translate-x-1/2 z-20">
           <div className="relative h-[320px] w-[320px]">
             <Image
-              src="/images/logoHero.png"
+              src="/images/logoHero.webp"
               alt="AMAT - Mutual Amarilla de Trabajadores"
               fill
               className="object-contain"

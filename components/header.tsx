@@ -92,7 +92,7 @@ export function Header() {
               }`}
             >
               <Image
-                src="/images/logoHeader.png"
+                src="/images/logoHeader.webp"
                 alt="AMAT - Mutual Amarilla de Trabajadores"
                 fill
                 className="object-contain"

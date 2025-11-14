@@ -18,7 +18,7 @@ export default function AyudaEconomica() {
   return (
       <section id="ayuda-economica" className="relative h-[400px] sm:h-[500px] md:h-[600px]">
         <Image 
-          src="/images/formImg.jpg" 
+          src="/images/formImg.webp" 
           alt="Ayuda Económica" 
           fill 
           className="object-cover" 

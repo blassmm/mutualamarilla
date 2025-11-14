@@ -62,7 +62,7 @@ export default function Services() {
                 visibleCards.includes(0) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
-                  src="/images/serviceOdonto.png"
+                  src="/images/serviceOdonto.webp"
                   alt="Servicio de Odontología"
                   width={200}
                   height={200}
@@ -89,7 +89,7 @@ export default function Services() {
                 visibleCards.includes(1) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
-                  src="/images/serviceIntDom.png"
+                  src="/images/serviceIntDom.webp"
                   alt="Servicio de Internación Domiciliaria"
                   width={200}
                   height={200}
@@ -117,7 +117,7 @@ export default function Services() {
                 visibleCards.includes(2) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
-                  src="/images/serviceSubNac.png"
+                  src="/images/serviceSubNac.webp"
                   alt="Servicio de Subsidio de Nacimiento"
                   width={200}
                   height={200}
@@ -146,7 +146,7 @@ export default function Services() {
                 visibleCards.includes(3) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
-                  src="/images/serviceSubFall.png"
+                  src="/images/serviceSubFall.webp"
                   alt="Servicio de Subsidio de Fallecimiento"
                   width={200}
                   height={200}
@@ -175,7 +175,7 @@ export default function Services() {
                 visibleCards.includes(4) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
-                  src="/images/serviceAseLeg.png"
+                  src="/images/serviceAseLeg.webp"
                   alt="Servicio de Asesoramiento Legal"
                   width={200}
                   height={200}
@@ -203,7 +203,7 @@ export default function Services() {
                 visibleCards.includes(5) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}>
                 <Image
-                  src="/images/serviceAyuEco.png"
+                  src="/images/serviceAyuEco.webp"
                   alt="Servicio de Ayudas Económicas"
                   width={200}
                   height={200}
