@@ -42,19 +42,18 @@ export default function Services() {
 
   return (
     <section id="servicios" className="relative bg-white">
-      <div className="absolute inset-0 bg-secondary z-0"
-           style={{
-             clipPath: 'ellipse(150% 100% at 50% 100%)'
-           }}
+      <div className="mt-10 absolute inset-0 bg-secondary z-0 
+                      [clip-path:ellipse(220%_100%_at_50%_100%)]
+                      md:[clip-path:ellipse(150%_100%_at_50%_100%)]"
       />
       
-      <div className="relative z-10 px-4 sm:px-6 mt-10 md:mt-0 py-12 md:py-16 lg:py-20">
+      <div className="relative z-10 px-4 sm:px-6 mt-10  py-16 lg:py-20">
         <div className="mx-auto max-w-[1200px]">
           <h2 className={`mb-8 md:mb-12 lg:mb-16 text-center text-2xl sm:text-3xl md:text-4xl font-bold text-dark ${abel.variable} font-abel`}>
             SERVICIOS PARA AFILIADOS
           </h2>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 px-24">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-24">
             <div 
               ref={(el) => { cardRefs.current[0] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
