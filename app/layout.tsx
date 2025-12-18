@@ -1,10 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "AMAT - Mutual Amarilla de Trabajadores",
@@ -18,9 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body>
         <Header />
-        <div className="pt-20">{children}</div>
+        <div className="pt-16 sm:pt-20">{children}</div>
       </body>
     </html>
   )

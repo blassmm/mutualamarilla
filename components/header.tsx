@@ -73,23 +73,21 @@ export function Header() {
   }
 
   const handleAyudaClick = () => {
-    router.push("/ayuda_economica")
+    router.push("/ayuda-economica")
     setIsMenuOpen(false)
   }
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm transition-all duration-300 ${abel.variable} ${
-        isScrolled ? "py-2" : "py-4"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm transition-all duration-300 ${abel.variable} ${isScrolled ? "py-2" : "py-4"
+        }`}
     >
       <div className="mx-4 md:mx-8 flex items-center justify-between">
         <div>
           <Link href="/" className="flex items-center">
             <div
-              className={`relative transition-all duration-300 ${
-                isScrolled ? "h-12 w-12" : "h-16 w-16"
-              }`}
+              className={`relative transition-all duration-300 ${isScrolled ? "h-12 w-12" : "h-16 w-16"
+                }`}
             >
               <Image
                 src="/images/logoHeader.webp"
@@ -106,44 +104,39 @@ export function Header() {
           <Link
             href="/"
             onClick={handleInicioClick}
-            className={` font-medium uppercase text-dark tracking-wide transition-colors ${
-              isActive("/") ? "text-header" : "text-dark hover:text-header"
-            }`}
+            className={` font-medium uppercase text-dark tracking-wide transition-colors ${isActive("/") ? "text-header" : "text-dark hover:text-header"
+              }`}
           >
             Inicio
           </Link>
           <Link
             href="/#quienes-somos"
             onClick={(e) => handleNavClick(e, "quienes-somos")}
-            className={` font-medium uppercase text-dark tracking-wide transition-colors ${
-              pathname === "/" && "text-dark hover:text-header"
-            }`}
+            className={` font-medium uppercase text-dark tracking-wide transition-colors ${pathname === "/" && "text-dark hover:text-header"
+              }`}
           >
             Quienes Somos
           </Link>
           <Link
             href="/#servicios"
             onClick={(e) => handleNavClick(e, "servicios")}
-            className={` font-medium uppercase text-dark tracking-wide transition-colors ${
-              pathname === "/" && "text-dark hover:text-header"
-            }`}
+            className={` font-medium uppercase text-dark tracking-wide transition-colors ${pathname === "/" && "text-dark hover:text-header"
+              }`}
           >
             Servicios
           </Link>
           <Link
             href="/ayuda-economica"
-            className={` font-medium uppercase tracking-wide transition-colors ${
-              isActive("/ayuda-economica") ? "text-header" : "text-dark hover:text-header"
-            }`}
+            className={` font-medium uppercase tracking-wide transition-colors ${isActive("/ayuda-economica") ? "text-header" : "text-dark hover:text-header"
+              }`}
           >
             Ayuda Económica
           </Link>
           <Link
             href="/#contacto"
             onClick={(e) => handleNavClick(e, "contacto")}
-            className={` font-medium uppercase text-dark tracking-wide transition-colors ${
-              pathname === "/" && "text-dark hover:text-header"
-            }`}
+            className={` font-medium uppercase text-dark tracking-wide transition-colors ${pathname === "/" && "text-dark hover:text-header"
+              }`}
           >
             Contacto
           </Link>
@@ -155,35 +148,30 @@ export function Header() {
           aria-label="Toggle menu"
         >
           <span
-            className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
-              isMenuOpen ? "rotate-45 translate-y-2" : ""
-            }`}
+            className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
           />
           <span
-            className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
-              isMenuOpen ? "opacity-0" : ""
-            }`}
+            className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""
+              }`}
           />
           <span
-            className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
-              isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
+            className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
           />
         </button>
       </div>
 
       <div
-        className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 overflow-hidden ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <nav className="flex flex-col font-abel p-4">
           <Link
             href="/"
             onClick={handleInicioClick}
-            className={`py-3 px-4 font-medium uppercase tracking-wide transition-colors ${
-              isActive("/") ? "text-header" : "text-dark hover:bg-gray-50"
-            }`}
+            className={`py-3 px-4 font-medium uppercase tracking-wide transition-colors ${isActive("/") ? "text-header" : "text-dark hover:bg-gray-50"
+              }`}
           >
             Inicio
           </Link>
@@ -204,9 +192,8 @@ export function Header() {
           <Link
             href="/ayuda-economica"
             onClick={handleAyudaClick}
-            className={`py-3 px-4 font-medium uppercase tracking-wide transition-colors ${
-              isActive("/ayuda-economica") ? "text-header" : "text-dark hover:bg-gray-50"
-            }`}
+            className={`py-3 px-4 font-medium uppercase tracking-wide transition-colors ${isActive("/ayuda-economica") ? "text-header" : "text-dark hover:bg-gray-50"
+              }`}
           >
             Ayuda Económica
           </Link>

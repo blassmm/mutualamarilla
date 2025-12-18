@@ -20,62 +20,63 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <section className="bg-white px-6">
+      <section className="bg-white px-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="bg-primary h-full lg:h-[420px] rounded-t-3xl p-8 lg:p-12 relative overflow-hidden flex items-center">
-            <div className="grid gap-4 lg:gap-12 lg:grid-cols-3 items-center w-full">
+          <div className="bg-primary rounded-t-3xl p-6 sm:p-8 lg:p-12 relative overflow-hidden">
+            <div className="grid gap-6 sm:gap-8 lg:gap-12 lg:grid-cols-3 items-start lg:items-center w-full">
               <div className={`text-medium ${openSans.variable} font-open-sans`}>
-                <p className="mb-4 lg:mb-8 leading-relaxed">
+                <p className="mb-4 lg:mb-8 leading-relaxed text-sm sm:text-base">
                   Nuestro equipo estará encantado de responder a tus consultas, brindarte información adicional y
                   asistirte en todo lo que necesites.
                 </p>
 
                 <div className="mb-4 lg:mb-8">
-                  <h3 className="mb-3  font-bold uppercase">HORARIO DE ATENCIÓN:</h3>
-                  <p className="">Lunes a viernes: 08:00 – 16:00</p>
-                  <p className="">Sábados: 09:00 – 13:00</p>
+                  <h3 className="mb-2 sm:mb-3 font-bold uppercase text-sm sm:text-base">HORARIO DE ATENCIÓN:</h3>
+                  <p className="text-sm sm:text-base">Lunes a viernes: 08:00 – 16:00</p>
+                  <p className="text-sm sm:text-base">Sábados: 09:00 – 13:00</p>
                 </div>
               </div>
+
               <div>
-                <div className={`space-y-4 text-xl ${abel.variable} font-abel`}>
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center">
-                      <svg className="h-6 w-6" fill="black" viewBox="0 0 24 24">
+                <div className={`space-y-3 sm:space-y-4 text-base sm:text-lg lg:text-xl ${abel.variable} font-abel`}>
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center shrink-0">
+                      <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="black" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                       </svg>
                     </div>
                     <p className="text-dark">221 4205203</p>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center">
-                      <svg className="h-6 w-6" fill="black" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center shrink-0">
+                      <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="black" viewBox="0 0 24 24">
                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                       </svg>
                     </div>
-                    <p className="text-dark">consultas@mutualamarilla.com</p>
+                    <p className="text-dark text-sm sm:text-base lg:text-xl break-all sm:break-normal">consultas@mutualamarilla.com</p>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center">
-                      <svg className="h-6 w-6" fill="black" viewBox="0 0 24 24">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center shrink-0">
+                      <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="black" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                       </svg>
                     </div>
                     <div>
                       <p className="text-dark">Calle 45 N°859, La Plata,</p>
-                      <p className={`text-[16px] text-medium ${openSans.variable} font-open-sans`}>Buenos Aires, Argentina.</p>
+                      <p className={`text-sm sm:text-base text-medium ${openSans.variable} font-open-sans`}>Buenos Aires, Argentina.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="relative h-[450px]">
-                <Image 
-                  src="/images/contactImg.png" 
-                  alt="Contacto" 
-                  fill 
-                  className="object-contain object-bottom mt-10 lg:mt-0" 
+              <div className="relative h-[280px] sm:h-[350px] lg:h-[400px] hidden sm:block">
+                <Image
+                  src="/images/contactImg.png"
+                  alt="Contacto"
+                  fill
+                  className="object-contain object-bottom"
                 />
               </div>
             </div>

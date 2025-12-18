@@ -46,21 +46,20 @@ export default function Services() {
                       [clip-path:ellipse(220%_100%_at_50%_100%)]
                       md:[clip-path:ellipse(150%_100%_at_50%_100%)]"
       />
-      
+
       <div className="relative z-10 px-4 sm:px-6 mt-10  py-16 lg:py-20">
         <div className="mx-auto max-w-[1200px]">
           <h2 className={`mb-8 md:mb-12 lg:mb-16 text-center text-2xl sm:text-3xl md:text-4xl font-bold text-dark ${abel.variable} font-abel`}>
             SERVICIOS PARA AFILIADOS
           </h2>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-24">
-            <div 
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 px-2 sm:px-4 md:px-8 lg:px-16">
+            <div
               ref={(el) => { cardRefs.current[0] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${
-                visibleCards.includes(0) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-              }`}>
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${visibleCards.includes(0) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                }`}>
                 <Image
                   src="/images/serviceOdonto.webp"
                   alt="Servicio de Odontología"
@@ -81,13 +80,12 @@ export default function Services() {
               </p>
             </div>
 
-            <div 
+            <div
               ref={(el) => { cardRefs.current[1] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${
-                visibleCards.includes(1) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-              }`}>
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${visibleCards.includes(1) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                }`}>
                 <Image
                   src="/images/serviceIntDom.webp"
                   alt="Servicio de Internación Domiciliaria"
@@ -109,13 +107,12 @@ export default function Services() {
               </p>
             </div>
 
-            <div 
+            <div
               ref={(el) => { cardRefs.current[2] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${
-                visibleCards.includes(2) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-              }`}>
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${visibleCards.includes(2) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                }`}>
                 <Image
                   src="/images/serviceSubNac.webp"
                   alt="Servicio de Subsidio de Nacimiento"
@@ -138,13 +135,12 @@ export default function Services() {
               </p>
             </div>
 
-            <div 
+            <div
               ref={(el) => { cardRefs.current[3] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${
-                visibleCards.includes(3) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-              }`}>
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 ${visibleCards.includes(3) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                }`}>
                 <Image
                   src="/images/serviceSubFall.webp"
                   alt="Servicio de Subsidio de Fallecimiento"
@@ -167,13 +163,12 @@ export default function Services() {
               </p>
             </div>
 
-            <div 
+            <div
               ref={(el) => { cardRefs.current[4] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${
-                visibleCards.includes(4) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-              }`}>
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-150 ${visibleCards.includes(4) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                }`}>
                 <Image
                   src="/images/serviceAseLeg.webp"
                   alt="Servicio de Asesoramiento Legal"
@@ -195,13 +190,12 @@ export default function Services() {
               </p>
             </div>
 
-            <div 
+            <div
               ref={(el) => { cardRefs.current[5] = el }}
               className="bg-white/30 rounded-3xl p-4 sm:p-6 text-center flex flex-col h-full"
             >
-              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${
-                visibleCards.includes(5) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-              }`}>
+              <div className={`mx-auto mb-4 sm:mb-6 h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[200px] md:w-[200px] overflow-hidden rounded-full transition-all duration-1000 delay-300 ${visibleCards.includes(5) ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                }`}>
                 <Image
                   src="/images/serviceAyuEco.webp"
                   alt="Servicio de Ayudas Económicas"

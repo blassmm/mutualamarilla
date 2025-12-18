@@ -3,44 +3,73 @@
 import Image from "next/image"
 import localFont from "next/font/local"
 import { useState } from "react"
-
-const abel = localFont({
-  src: "../../public/fonts/Abel-Regular.ttf",
-  variable: "--font-abel",
-})
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { sendAyudaEconomicaEmail } from "./actions"
 
 const openSans = localFont({
   src: "../../public/fonts/OpenSans-Regular.ttf",
   variable: "--font-open-sans",
 })
 
+const abel = localFont({
+  src: "../../public/fonts/Abel-Regular.ttf",
+  variable: "--font-abel",
+})
+
+const schema = z.object({
+  nombreApellido: z.string().min(3, "Mínimo 3 caracteres").max(100, "Máximo 100 caracteres"),
+  sexo: z.string().min(1, "Seleccione una opción"),
+  dni: z.string().min(7, "DNI inválido").max(10, "DNI inválido"),
+  localidad: z.string().min(2, "Mínimo 2 caracteres").max(100, "Máximo 100 caracteres"),
+  telefonoCelular: z.string().min(8, "Teléfono inválido").max(20, "Teléfono inválido"),
+  email: z.string().email("Email inválido"),
+  reparticion: z.string().min(2, "Mínimo 2 caracteres").max(100, "Máximo 100 caracteres"),
+  montoSolicitar: z.string().min(1, "Ingrese un monto"),
+  mensaje: z.string().max(500, "Máximo 500 caracteres").optional(),
+})
+
+type FormData = z.infer<typeof schema>
+
 export function FormularioAyuda() {
-  const [formData, setFormData] = useState({
-    nombreApellido: "",
-    sexo: "",
-    dni: "",
-    localidad: "",
-    telefonoCelular: "",
-    email: "",
-    reparticion: "",
-    montoSolicitar: "",
-    mensaje: "",
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log(formData)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+    
+    try {
+      const result = await sendAyudaEconomicaEmail({
+        ...data,
+        mensaje: data.mensaje || "",
+      })
+      
+      if (result.success) {
+        setSubmitStatus("success")
+        reset()
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch {
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
-    <section className={`bg-white py-8 sm:py-12 md:py-16 ${openSans.variable}`}>
+    <section className={`bg-white py-8 sm:py-12 md:py-16 ${openSans.variable} ${abel.variable}`}>
       <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24 font-open-sans">
         <div className="grid gap-8 sm:gap-10 md:gap-12 lg:grid-cols-2">
           <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
@@ -102,77 +131,93 @@ export function FormularioAyuda() {
             <h3 className="text-2xl sm:text-3xl font-medium mb-6 sm:mb-8 text-dark font-abel">
               Datos Personales
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            
+            {submitStatus === "success" && (
+              <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                ¡Formulario enviado correctamente! Nos pondremos en contacto pronto.
+              </div>
+            )}
+            
+            {submitStatus === "error" && (
+              <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                Error al enviar el formulario. Por favor, intente nuevamente.
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
               <div>
                 <input
                   type="text"
-                  name="nombreApellido"
                   placeholder="Nombre y Apellido"
-                  required
-                  value={formData.nombreApellido}
-                  onChange={handleChange}
+                  {...register("nombreApellido")}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
+                {errors.nombreApellido && (
+                  <p className="mt-1 text-sm text-red-500">{errors.nombreApellido.message}</p>
+                )}
+              </div>
+
+              <div>
+                <select
+                  {...register("sexo")}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-medium"
+                >
+                  <option value="">Seleccione Sexo</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                {errors.sexo && (
+                  <p className="mt-1 text-sm text-red-500">{errors.sexo.message}</p>
+                )}
               </div>
 
               <div>
                 <input
                   type="text"
-                  name="sexo"
-                  placeholder="Sexo"
-                  required
-                  value={formData.sexo}
-                  onChange={handleChange}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
-                />
-              </div>
-
-              <div>
-                <input
-                  type="text"
-                  name="dni"
                   placeholder="DNI"
-                  required
-                  value={formData.dni}
-                  onChange={handleChange}
+                  {...register("dni")}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
+                {errors.dni && (
+                  <p className="mt-1 text-sm text-red-500">{errors.dni.message}</p>
+                )}
               </div>
 
               <div>
                 <input
                   type="text"
-                  name="localidad"
                   placeholder="Localidad"
-                  required
-                  value={formData.localidad}
-                  onChange={handleChange}
+                  {...register("localidad")}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
+                {errors.localidad && (
+                  <p className="mt-1 text-sm text-red-500">{errors.localidad.message}</p>
+                )}
               </div>
 
               <div>
                 <input
                   type="tel"
-                  name="telefonoCelular"
                   placeholder="Teléfono Celular"
-                  required
-                  value={formData.telefonoCelular}
-                  onChange={handleChange}
+                  {...register("telefonoCelular")}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
+                {errors.telefonoCelular && (
+                  <p className="mt-1 text-sm text-red-500">{errors.telefonoCelular.message}</p>
+                )}
               </div>
 
               <div>
                 <input
                   type="email"
-                  name="email"
                   placeholder="Email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
+                  {...register("email")}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+                )}
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-medium mt-6 sm:mt-8 mb-4 sm:mb-6 text-dark font-abel">
@@ -182,13 +227,13 @@ export function FormularioAyuda() {
               <div>
                 <input
                   type="text"
-                  name="reparticion"
                   placeholder="Repartición"
-                  required
-                  value={formData.reparticion}
-                  onChange={handleChange}
+                  {...register("reparticion")}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
+                {errors.reparticion && (
+                  <p className="mt-1 text-sm text-red-500">{errors.reparticion.message}</p>
+                )}
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-medium mt-6 sm:mt-8 mb-4 sm:mb-6 text-dark font-abel">
@@ -198,24 +243,25 @@ export function FormularioAyuda() {
               <div>
                 <input
                   type="text"
-                  name="montoSolicitar"
                   placeholder="$1000"
-                  required
-                  value={formData.montoSolicitar}
-                  onChange={handleChange}
+                  {...register("montoSolicitar")}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
                 />
+                {errors.montoSolicitar && (
+                  <p className="mt-1 text-sm text-red-500">{errors.montoSolicitar.message}</p>
+                )}
               </div>
 
               <div>
                 <textarea
-                  name="mensaje"
-                  placeholder="Dejenos su mensaje"
+                  placeholder="Dejenos su mensaje (opcional)"
                   rows={6}
-                  value={formData.mensaje}
-                  onChange={handleChange}
+                  {...register("mensaje")}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary resize-none placeholder:text-medium"
                 />
+                {errors.mensaje && (
+                  <p className="mt-1 text-sm text-red-500">{errors.mensaje.message}</p>
+                )}
               </div>
 
               <p className="text-xs sm:text-sm text-medium">
@@ -228,9 +274,10 @@ export function FormularioAyuda() {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto bg-primary text-black px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded hover:bg-yellow-400 transition-colors font-abel text-base sm:text-lg"
+                disabled={isSubmitting}
+                className="w-full sm:w-auto bg-primary text-black px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded hover:bg-yellow-400 transition-colors font-abel text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Enviar
+                {isSubmitting ? "Enviando..." : "Enviar"}
               </button>
             </form>
           </div>
