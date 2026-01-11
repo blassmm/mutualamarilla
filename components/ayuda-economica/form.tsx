@@ -48,16 +48,20 @@ export function FormularioAyuda() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true)
     setSubmitStatus("idle")
-    
+
     try {
       const result = await sendAyudaEconomicaEmail({
         ...data,
         mensaje: data.mensaje || "",
       })
-      
+
       if (result.success) {
         setSubmitStatus("success")
         reset()
+        // GTM event for conversion tracking
+        if (typeof window !== "undefined" && window.dataLayer) {
+          window.dataLayer.push({ event: "submit_lead_form" })
+        }
       } else {
         setSubmitStatus("error")
       }
@@ -111,14 +115,15 @@ export function FormularioAyuda() {
                 href="https://wa.me/5492214205203"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => window.dataLayer?.push({ event: "JoinChat" })}
                 className="group relative inline-block overflow-hidden rounded bg-[#25D366] px-4 sm:px-6 md:px-8 py-2 sm:py-3 text-sm sm:text-base md:text-lg text-white transition-all duration-300 hover:pr-10 sm:hover:pr-12 md:hover:pr-16 font-abel"
               >
                 <span className="relative z-10">Contactate por Whatsapp</span>
                 <span className="absolute right-2 sm:right-3 md:right-4 top-1/2 -translate-y-1/2 opacity-0 transition-all duration-300 group-hover:opacity-100">
-                  <Image 
-                    src="/images/conversacion.png" 
-                    alt="WhatsApp" 
-                    width={16} 
+                  <Image
+                    src="/images/conversacion.png"
+                    alt="WhatsApp"
+                    width={16}
                     height={16}
                     className="object-contain brightness-0 invert sm:w-5 sm:h-5"
                   />
@@ -131,13 +136,13 @@ export function FormularioAyuda() {
             <h3 className="text-2xl sm:text-3xl font-medium mb-6 sm:mb-8 text-dark font-abel">
               Datos Personales
             </h3>
-            
+
             {submitStatus === "success" && (
               <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
                 ¡Formulario enviado correctamente! Nos pondremos en contacto pronto.
               </div>
             )}
-            
+
             {submitStatus === "error" && (
               <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
                 Error al enviar el formulario. Por favor, intente nuevamente.

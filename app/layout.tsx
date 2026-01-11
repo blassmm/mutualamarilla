@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { GoogleTagManager } from "@next/third-parties/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 
@@ -15,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
       <body>
         <Header />
         <div className="pt-16 sm:pt-20">{children}</div>
