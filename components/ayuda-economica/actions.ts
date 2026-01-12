@@ -20,7 +20,7 @@ export async function sendAyudaEconomicaEmail(data: FormData) {
   try {
     const response = await resend.emails.send({
       from: "Formulario AMAT <onboarding@resend.dev>",
-      to: "montanariblas@hotmail.com",
+      to: "debitos.amat@gmail.com",
       subject: `Nueva solicitud de Ayuda Económica - ${data.nombreApellido}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5;">
