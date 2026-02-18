@@ -26,7 +26,7 @@ export function Pregunta() {
           Ayudas económicas para <strong>empleados públicos de la Provincia de Buenos Aires</strong>
         </p>
         <p className="text-xs sm:text-sm md:text-base text-black">
-          Completá el formulario o envianos un Whatsapp al <strong>2214205203</strong> y evaluaremos tu caso para brindarte la ayuda que necesitas.
+          Completá el formulario o envianos un Whatsapp al <strong>2216002059</strong> y evaluaremos tu caso para brindarte la ayuda que necesitas.
         </p>
         <p className="text-xs sm:text-sm md:text-base text-black mt-2">
           Muchas gracias por formar parte de <strong>Mutual Amarilla</strong>.

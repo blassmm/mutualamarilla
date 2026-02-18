@@ -109,10 +109,10 @@ export function FormularioAyuda() {
                 ¿Cómo lo solicito?
               </h3>
               <p className="text-sm sm:text-base text-black mb-4">
-                Completa el formulario o envianos un Whatsapp al <strong>2214205203</strong>
+                Completa el formulario o envianos un Whatsapp al <strong>2216002059</strong>
               </p>
               <a
-                href="https://wa.me/5492214205203"
+                href="https://wa.me/5492216002059"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => window.dataLayer?.push({ event: "JoinChat" })}
