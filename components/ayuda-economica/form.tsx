@@ -25,7 +25,7 @@ const schema = z.object({
   localidad: z.string().min(2, "Mínimo 2 caracteres").max(100, "Máximo 100 caracteres"),
   telefonoCelular: z.string().min(8, "Teléfono inválido").max(20, "Teléfono inválido"),
   email: z.string().email("Email inválido"),
-  reparticion: z.string().min(2, "Mínimo 2 caracteres").max(100, "Máximo 100 caracteres"),
+  reparticion: z.string().min(1, "Seleccione una opción"),
   montoSolicitar: z.string().min(1, "Ingrese un monto"),
   mensaje: z.string().max(500, "Máximo 500 caracteres").optional(),
 })
@@ -230,12 +230,17 @@ export function FormularioAyuda() {
               </h3>
 
               <div>
-                <input
-                  type="text"
-                  placeholder="Repartición"
+                <select
                   {...register("reparticion")}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-medium"
-                />
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-medium"
+                >
+                  <option value="" disabled>Seleccione Repartición</option>
+                  <option value="Ministerio de Seguridad">Ministerio de Seguridad</option>
+                  <option value="Ministerio de Salud">Ministerio de Salud</option>
+                  <option value="Ministerio de Educación">Ministerio de Educación</option>
+                  <option value="Servicio Penitenciario Bonaerense">Servicio Penitenciario Bonaerense</option>
+                  <option value="Otra reparticion">Otra reparticion</option>
+                </select>
                 {errors.reparticion && (
                   <p className="mt-1 text-sm text-red-500">{errors.reparticion.message}</p>
                 )}
