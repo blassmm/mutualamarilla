@@ -7,6 +7,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { sendAyudaEconomicaEmail } from "./actions"
+import { appendToGoogleSheet } from "@/app/server/mutations/sheets-actions"
 import { REPARTICION_LABELS } from "@/data/repartition"
 
 const openSans = localFont({
@@ -53,13 +54,22 @@ export function FormularioAyuda() {
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
-    try {
-      const result = await sendAyudaEconomicaEmail({
-        ...data,
-        mensaje: data.mensaje || "",
-      })
+    const formPayload = {
+      ...data,
+      mensaje: data.mensaje || "",
+    }
 
-      if (result.success) {
+    try {
+      const [emailResult] = await Promise.allSettled([
+        sendAyudaEconomicaEmail(formPayload),
+        appendToGoogleSheet(formPayload),
+      ])
+
+      // just result from email is taken into account to show errors
+      const emailOk =
+        emailResult.status === "fulfilled" && emailResult.value.success
+
+      if (emailOk) {
         setSubmitStatus("success")
         reset()
         // GTM event for conversion tracking
