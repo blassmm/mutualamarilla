@@ -1,5 +1,6 @@
 "use server";
 
+import { REPARTICION_LABELS } from "@/data/repartition";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -18,9 +19,10 @@ interface FormData {
 
 export async function sendAyudaEconomicaEmail(data: FormData) {
   try {
+    const reparticionLabel = REPARTICION_LABELS[data.reparticion] ?? data.reparticion;
     const response = await resend.emails.send({
       from: "Formulario AMAT <onboarding@resend.dev>",
-      to: "consultas@mutualamarilla.com",
+      to: "consultasmutualamarilla.com",
       subject: `Nueva solicitud de Ayuda Económica - ${data.nombreApellido}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5;">
@@ -73,7 +75,7 @@ export async function sendAyudaEconomicaEmail(data: FormData) {
               <tr>
                 <td style="padding: 8px 0; color: #666; width: 40%;"><strong>Repartición:</strong></td>
                 <td style="padding: 8px 0; color: #333;">${
-                  data.reparticion
+                  reparticionLabel
                 }</td>
               </tr>
             </table>
