@@ -71,7 +71,7 @@ export async function appendToGoogleSheet(data: FormData) {
       consulta, // consulta
     ];
 
-    await sheets.spreadsheets.values.append({
+    const result = await sheets.spreadsheets.values.append({
       spreadsheetId,
       range: `'${sheetName}'!A:I`,
       valueInputOption: "USER_ENTERED",
@@ -80,6 +80,11 @@ export async function appendToGoogleSheet(data: FormData) {
         values: [rowValues],
       },
     });
+
+    if (result.status !== 200) {
+      console.error("[Sheets] Respuesta inesperada:", result.status, result.data);
+      return { success: false, error: "No se pudo guardar en la planilla" };
+    }
 
     return { success: true };
   } catch (error) {
