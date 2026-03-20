@@ -85,6 +85,8 @@ export async function appendToGoogleSheet(data: FormData) {
       },
     });
 
+    console.log(data)
+
     if (result.status !== 200) {
       console.error(
         "[Sheets] Respuesta inesperada:",
@@ -111,45 +113,56 @@ async function getAffiliation(cuil: string) {
 
   const url = `https://mutualamat.com.ar/MutualConsultaXMLAMAT.php?USUARIO=${AMAT_USER}&CLAVE=${AMAT_KEY}&CUIL=${cuil}`;
 
-  const res = await fetch(url);
+  try {
+    const res = await fetch(url);
+    const xml = await res.text();
 
-  if (!res.ok) {
-    throw new Error("Error consultando AMAT");
-  }
+    console.log("AMAT RAW RESPONSE:", xml);
 
-  const xml = await res.text();
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      trimValues: true,
+    });
 
-  const parser = new XMLParser({
-    ignoreAttributes: false,
-    trimValues: true,
-  });
+    const json = parser.parse(xml);
 
-  const json = parser.parse(xml);
+    // docs
+    // https://mutualamat.com.ar/DocumentacionAPIConsultaCuilAmat.php
+    const state = json?.afiliados?.estado?.EstadoConsulta;
 
-  // docs
-  // https://mutualamat.com.ar/DocumentacionAPIConsultaCuilAmat.php
-  const state = json?.afiliados?.estado?.EstadoConsulta;
+    if (state === "Clave Incorrecta o Usuario inexistente") {
+      console.error("Credenciales incorrectas");
+      return {
+        found: false,
+        affiliate: false,
+      };
+    }
 
-  if (state === "Clave Incorrecta o Usuario inexistente") {
-    console.error("Credenciales incorrectas");
+    if (state === "CUIL NO ENCONTRADO") {
+      return { found: false, affiliate: false };
+    }
+
+    if (state !== "OK") {
+      return {
+        found: false,
+        affiliate: false,
+      };
+    }
+
+    const affiliateRaw = json?.afiliados?.persona?.amatAfiliado;
+    const affiliate = Number(affiliateRaw) > 0;
+
     return {
-      found: false,
-      affiliate: false,
+      found: true,
+      affiliate,
     };
+  } catch (err: any) {
+    if (err.name === "AbortError") {
+      console.error("AMAT TIMEOUT");
+    } else {
+      console.error("AMAT FETCH ERROR", err);
+    }
+
+    throw err;
   }
-
-  if (state !== "OK") {
-    return {
-      found: false,
-      affiliate: false,
-    };
-  }
-
-  const affiliateRaw = json?.afiliados?.persona?.amatAfiliado;
-  const affiliate = Number(affiliateRaw) > 0;
-
-  return {
-    found: true,
-    affiliate,
-  };
 }
