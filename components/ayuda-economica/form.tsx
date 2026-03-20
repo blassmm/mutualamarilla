@@ -7,6 +7,8 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { sendAyudaEconomicaEmail } from "./actions"
+import { appendToGoogleSheet } from "@/app/server/mutations/sheets-actions"
+import { REPARTICION_LABELS } from "@/data/repartition"
 
 const openSans = localFont({
   src: "../../public/fonts/OpenSans-Regular.ttf",
@@ -25,7 +27,10 @@ const schema = z.object({
   localidad: z.string().min(2, "Mínimo 2 caracteres").max(100, "Máximo 100 caracteres"),
   telefonoCelular: z.string().min(8, "Teléfono inválido").max(20, "Teléfono inválido"),
   email: z.string().email("Email inválido"),
-  reparticion: z.string().min(1, "Seleccione una opción"),
+  reparticion: z.enum(
+    Object.keys(REPARTICION_LABELS),
+    { message: "Seleccione una opción" },
+  ),
   montoSolicitar: z.string().min(1, "Ingrese un monto"),
   mensaje: z.string().max(500, "Máximo 500 caracteres").optional(),
 })
@@ -49,13 +54,22 @@ export function FormularioAyuda() {
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
-    try {
-      const result = await sendAyudaEconomicaEmail({
-        ...data,
-        mensaje: data.mensaje || "",
-      })
+    const formPayload = {
+      ...data,
+      mensaje: data.mensaje || "",
+    }
 
-      if (result.success) {
+    try {
+      const [emailResult] = await Promise.allSettled([
+        sendAyudaEconomicaEmail(formPayload),
+        appendToGoogleSheet(formPayload),
+      ])
+
+      // just result from email is taken into account to show errors
+      const emailOk =
+        emailResult.status === "fulfilled" && emailResult.value.success
+
+      if (emailOk) {
         setSubmitStatus("success")
         reset()
         // GTM event for conversion tracking
@@ -235,11 +249,11 @@ export function FormularioAyuda() {
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary text-medium"
                 >
                   <option value="" disabled>Seleccione Repartición</option>
-                  <option value="Ministerio de Seguridad">Ministerio de Seguridad</option>
-                  <option value="Ministerio de Salud">Ministerio de Salud</option>
-                  <option value="Ministerio de Educación">Ministerio de Educación</option>
-                  <option value="Servicio Penitenciario Bonaerense">Servicio Penitenciario Bonaerense</option>
-                  <option value="Otra reparticion">Otra reparticion</option>
+                  {Object.entries(REPARTICION_LABELS).map(([key, value]) => (
+                    <option key={key} value={key}>
+                      {value}
+                    </option>
+                  ))}
                 </select>
                 {errors.reparticion && (
                   <p className="mt-1 text-sm text-red-500">{errors.reparticion.message}</p>
