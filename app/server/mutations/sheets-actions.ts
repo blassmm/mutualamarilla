@@ -75,7 +75,7 @@ export async function appendToGoogleSheet(data: FormData) {
       "", // message_id
       data.mensaje, // consulta
       data.montoSolicitar, // monto
-      affiliate,
+      affiliate ? "si" : "no",
     ];
 
     const result = await sheets.spreadsheets.values.append({
