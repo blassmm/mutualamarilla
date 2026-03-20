@@ -3,6 +3,7 @@
 import { google } from "googleapis";
 import { REPARTICION_LABELS } from "@/data/repartition";
 import { XMLParser } from "fast-xml-parser";
+import { calcCuil } from "@/app/utils/calc-cuil";
 
 interface FormData {
   nombreApellido: string;
@@ -55,11 +56,13 @@ export async function appendToGoogleSheet(data: FormData) {
     const reparticionLabel =
       REPARTICION_LABELS[data.reparticion] ?? data.reparticion;
 
+    const affiliateCUIL = calcCuil(data.dni, data.sexo);
+
     const now = new Date().toISOString();
     const dateStr = `=(DATEVALUE(LEFT("${now}",10)) + TIMEVALUE(MID("${now}",12,8))) + (-3/24)`; // this calc is to show date instead plain timestampz
     // also, the format of the cell should be date
 
-    const { affiliate } = await getAffiliation(data.dni);
+    const { affiliate } = await getAffiliation(affiliateCUIL);
 
     const rowValues = [
       data.telefonoCelular, // phone
@@ -85,7 +88,7 @@ export async function appendToGoogleSheet(data: FormData) {
       },
     });
 
-    console.log(data)
+    console.log(data);
 
     if (result.status !== 200) {
       console.error(
