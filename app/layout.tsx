@@ -5,7 +5,7 @@ import "./globals.css"
 import { Header } from "@/components/header"
 
 export const metadata: Metadata = {
-  title: "AMAT - Mutual Amarilla de Trabajadores",
+  title: "Asociacion Mutual Amarilla de Trabajadores",
   description: "Mutual con sede central en la ciudad de La Plata y con alcance en toda la Provincia de Buenos Aires",
   icons: {
     icon: "/icons/logo-favicon.ico",
