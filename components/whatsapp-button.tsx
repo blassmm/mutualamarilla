@@ -7,7 +7,7 @@ export function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/5492214373691"
+      href="https://wa.me/5491154617806"
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
