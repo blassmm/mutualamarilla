@@ -123,10 +123,10 @@ export function FormularioAyuda() {
                 ¿Cómo lo solicito?
               </h3>
               <p className="text-sm sm:text-base text-black mb-4">
-                Completa el formulario o envianos un Whatsapp al <strong>2214373691</strong>
+                Completa el formulario o envianos un Whatsapp al <strong>+5491154617806</strong>
               </p>
               <a
-                href="https://wa.me/5492214373691"
+                href="https://wa.me/5491154617806"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => window.dataLayer?.push({ event: "JoinChat" })}
@@ -290,8 +290,8 @@ export function FormularioAyuda() {
 
               <p className="text-xs sm:text-sm text-medium">
                 Envienos a{" "}
-                <a href="mailto:consultas@mutualamarilla.com" className="text-black underline">
-                  consultas@mutualamarilla.com
+                <a href="mailto:formulariosamat@gmail.com" className="text-black underline">
+                  formulariosamat@gmail.com
                 </a>{" "}
                 el último recibo de sueldo y movimientos bancarios.
               </p>

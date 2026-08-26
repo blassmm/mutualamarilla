@@ -22,7 +22,7 @@ export async function sendAyudaEconomicaEmail(data: FormData) {
     const reparticionLabel = REPARTICION_LABELS[data.reparticion] ?? data.reparticion;
     const response = await resend.emails.send({
       from: "Formulario AMAT <onboarding@resend.dev>",
-      to: "consultasmutualamarilla.com",
+      to: "formulariosamat@gmail.com",
       subject: `Nueva solicitud de Ayuda Económica - ${data.nombreApellido}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5;">
